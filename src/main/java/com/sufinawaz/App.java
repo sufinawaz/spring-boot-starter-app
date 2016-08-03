@@ -1,12 +1,13 @@
 package com.sufinawaz;
 
+import com.sufinawaz.config.ServiceConfig;
 import com.sufinawaz.filter.ProfilingFilter;
+import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -14,7 +15,7 @@ import java.util.TimeZone;
 
 @EnableAutoConfiguration
 @ServletComponentScan
-@ComponentScan
+@Import({ServiceConfig.class})
 @Configuration
 public class App implements ServletContextInitializer {
     @Override
@@ -24,12 +25,6 @@ public class App implements ServletContextInitializer {
     }
 
     public static void main(String[] args) throws Exception {
-        //// simpler:
-        // SpringApplication.run(App.class, args);
-
-        // use builder
-        new SpringApplicationBuilder()
-            .sources(App.class)
-            .run(args);
+        SpringApplication.run(App.class, args);
     }
 }
