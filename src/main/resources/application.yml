@@ -6,6 +6,9 @@ logging:
       springframework:
         web: INFO
       hibernate: ERROR
+app:
+  random:
+    number: 7
 
 ---
 spring:
