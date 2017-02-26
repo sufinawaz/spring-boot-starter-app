@@ -35,7 +35,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
 	<dependencies>
 		<!-- begin spring boot dependencies -->
 		<dependency>
@@ -56,35 +55,25 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-jetty</artifactId>
 		</dependency>
-		<!--spring data-->
-		<!--<dependency>-->
-			<!--<groupId>org.springframework.boot</groupId>-->
-			<!--<artifactId>spring-boot-starter-data-jpa</artifactId>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.postgresql</groupId>-->
-			<!--<artifactId>postgresql</artifactId>-->
-			<!--<scope>runtime</scope>-->
-		<!--</dependency>-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+		</dependency>
 		<!-- end spring boot dependencies -->
 
-		<!-- required for amazon sdk to work -->
+		<!-- begin amazon sdk to work -->
 		<dependency>
 			<groupId>com.amazonaws</groupId>
 			<artifactId>aws-java-sdk</artifactId>
 			<version>1.11.96</version>
 		</dependency>
-		<!--<dependency>-->
-			<!--<groupId>org.apache.httpcomponents</groupId>-->
-			<!--<artifactId>httpclient</artifactId>-->
-			<!--<version>4.4</version>-->
-		<!--</dependency>-->
-		<!--<dependency>-->
-			<!--<groupId>org.apache.httpcomponents</groupId>-->
-			<!--<artifactId>httpcore</artifactId>-->
-			<!--<version>4.4</version>-->
-		<!--</dependency>-->
-		<!-- guava -->
+		<!-- end amazon sdk to work -->
+
+		<!-- extras -->
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>

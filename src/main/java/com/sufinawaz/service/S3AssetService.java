@@ -35,11 +35,16 @@ public class S3AssetService {
 
     public void upload(final MultipartFile upload) {
         try {
+
+            // make file name unique
             final String fileName = UUID.randomUUID().toString() + "-" + upload.getOriginalFilename();
+
             // upload the file
             client.putObject(bucket, fileName, upload.getInputStream(), null);
+
             // set the permission of file to be public
             client.setObjectAcl(bucket, fileName, CannedAccessControlList.PublicRead);
+
         } catch (AmazonClientException | IOException ie) {
             throw new RuntimeException(ie.getMessage());
         }

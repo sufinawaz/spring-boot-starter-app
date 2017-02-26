@@ -9,7 +9,7 @@ logging:
 aws:
   accessKeyId:
   secretKey:
-  bucket: 
+  bucket:
   url: https://s3.amazonaws.com/
 
 # increase the file size limit for multipart file upload
@@ -18,9 +18,13 @@ spring:
     multipart:
       maxFileSize: 20MB
       maxRequestSize: 20MB
-app:
-  random:
-    number: 7
+  datasource:
+    url: jdbc:postgresql://localhost:5432
+    username:
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
 
 server:
   port: 8008
@@ -32,17 +36,9 @@ spring:
 server:
   port: 8008
 
-app:
-  random:
-    number: 7
-
 ---
 spring:
   profiles: prod
 
 server:
   port: 8009
-
-app:
-  random:
-    number: 8
