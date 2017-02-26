@@ -6,9 +6,24 @@ logging:
       springframework:
         web: INFO
       hibernate: ERROR
+aws:
+  accessKeyId:
+  secretKey:
+  bucket: 
+  url: https://s3.amazonaws.com/
+
+# increase the file size limit for multipart file upload
+spring:
+  http:
+    multipart:
+      maxFileSize: 20MB
+      maxRequestSize: 20MB
 app:
   random:
     number: 7
+
+server:
+  port: 8008
 
 ---
 spring:
